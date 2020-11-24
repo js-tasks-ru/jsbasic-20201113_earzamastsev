@@ -4,5 +4,12 @@
  * @returns {boolean}
  */
 function checkSpam(str) {
-  // ваш код...
+  let stopWords = ["1xbet", "xxx"];
+  let strInLowcase = str.toLowerCase();
+  for (let word of stopWords) {
+    if (strInLowcase.includes(word)) {
+      return true;
+    }
+  }
+  return false;
 }
