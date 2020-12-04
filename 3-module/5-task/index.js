@@ -4,7 +4,7 @@
  * @returns {{min:number, max:number}}  объект
  */
 function getMinMax(str) {
-  let re = /[\d-.]+/g;
+  let re = /-?\d+\.?\d*/g;
   let numbersArray = str.match(re);
   numbersArray.sort((a, b) => a - b);
   let result = {
