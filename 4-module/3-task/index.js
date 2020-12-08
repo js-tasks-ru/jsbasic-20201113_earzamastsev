@@ -4,7 +4,6 @@
  */
 function highlight(table) {
     for (row of table.rows) {
-
         if (row.cells[3].hasAttribute('data-available')) {
             if (row.cells[3].dataset.available == "true") {
                 row.classList.add('available');
