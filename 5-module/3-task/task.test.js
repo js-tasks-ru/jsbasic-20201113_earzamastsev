@@ -113,7 +113,7 @@ describe('5-module-3-task', () => {
     });
 
     it('при клике по кнопке "назад", должна переключать на один слайд назад', () => {
-      carouselArrowLeft.dispatchEvent(clickEvent);  
+      carouselArrowLeft.dispatchEvent(clickEvent);
 
       expect(carouselInner.style.transform).toBe('translateX(-1000px)');
     });
