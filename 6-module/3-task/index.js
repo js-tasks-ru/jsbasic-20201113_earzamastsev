@@ -52,27 +52,24 @@ export default class Carousel {
     let pageCount = 1;
 
     carousel.addEventListener('click', buttonHandler);
-    
     function buttonHandler(event) {
       let offsetWidth = carouselInner.offsetWidth;
  
-      if (event.target.closest('div.carousel__arrow_right') == rightButton) {
+      if (event.target.closest('div.carousel__arrow_right')) {
         leftButton.style.display = '';
         pageCount += 1;
         currentOffset = currentOffset - offsetWidth;
         carouselInner.style.transform = 'translateX(' + currentOffset + 'px)';
-        console.log('right button pressed,  offsetWidth:', currentOffset, offsetWidth, pageCount);
         if (pageCount == slidesLength) {
           rightButton.style.display = 'none';
         }
       }
 
-      if (event.target.closest('div.carousel__arrow_left') == leftButton) {
+      if (event.target.closest('div.carousel__arrow_left')) {
         pageCount -= 1;
         rightButton.style.display = '';
         currentOffset = currentOffset + offsetWidth;
         carouselInner.style.transform = 'translateX(' + currentOffset + 'px)';
-        console.log('left button pressed, currentOffset:', currentOffset);
         if (pageCount == 1) {
           leftButton.style.display = 'none';
         }
