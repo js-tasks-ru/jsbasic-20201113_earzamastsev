@@ -43,6 +43,11 @@ export default class Carousel {
         carousel.dispatchEvent(addProductEvent);
       });
     }
+    this.initCarousel(carousel);
+    return carousel;
+  }
+
+  initCarousel(carousel) {
     const slidesLength = this.slides.length;
     const rightButton = carousel.querySelector('.carousel__arrow_right');
     const leftButton = carousel.querySelector('.carousel__arrow_left');
@@ -75,7 +80,5 @@ export default class Carousel {
         }
       }
     }
-
-    return carousel;
   }
 }
