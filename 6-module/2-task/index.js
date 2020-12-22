@@ -27,11 +27,9 @@ export default class ProductCard {
       </div>
     </div>`;
     elem.insertAdjacentHTML('afterBegin', template);
-
     elem.querySelector('button.card__button').addEventListener('click', (event) => {
               elem.querySelector('div.card').dispatchEvent(this.addProductEvent);
               });
     return elem;
 }
-
 }
