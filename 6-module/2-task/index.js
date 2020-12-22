@@ -5,15 +5,15 @@ export default class ProductCard {
     this.product = product;
     this.elem = this.render();
     this.addProductEvent = new CustomEvent("product-add", 
-      { 
-        detail: this.product.id,
-        bubbles: true 
-      }
-    );
+                { 
+                  detail: this.product.id,
+                  bubbles: true 
+                }
+                );
   }
   render() {
-    let elem = document.createElement('div');
-    let template = `
+      let elem = document.createElement('div');
+      let template = `
       <div class="card">
       <div class="card__top">
         <img src="/assets/images/products/${this.product["image"]}" class="card__image" alt="product">
@@ -28,8 +28,8 @@ export default class ProductCard {
     </div>`;
     elem.insertAdjacentHTML('afterBegin', template);
     elem.querySelector('button.card__button').addEventListener('click', (event) => {
-      elem.querySelector('div.card').dispatchEvent(this.addProductEvent);
-    });
+              elem.querySelector('div.card').dispatchEvent(this.addProductEvent);
+              });
     return elem;
-  }
+}
 }
