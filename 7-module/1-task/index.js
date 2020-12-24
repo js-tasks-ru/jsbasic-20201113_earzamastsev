@@ -64,6 +64,12 @@ export default class RibbonMenu {
         detail: event.target.dataset.id, 
         bubbles: true
       });
+      let aElemList = elem.querySelectorAll('A');
+      for (let a of aElemList) {
+        a.classList.remove('ribbon__item_active');
+      }
+      event.target.classList.add('ribbon__item_active');
+      event.preventDefault();
       ribbonInner.dispatchEvent(ribbonSelect);
     });
 
