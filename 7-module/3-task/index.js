@@ -23,8 +23,8 @@ export default class StepSlider {
       sliderSteps.insertAdjacentHTML('beforeEnd', "<span></span>");
     }  
     elem.insertAdjacentHTML('afterBegin', template);
-    elem.insertAdjacentElement ('beforeEnd', sliderSteps);
-    sliderSteps.firstChild.classList.add('slider__step-active')
+    elem.insertAdjacentElement('beforeEnd', sliderSteps);
+    sliderSteps.firstChild.classList.add('slider__step-active');
 
     elem.addEventListener('click', event => {
       let left = event.clientX - this.elem.getBoundingClientRect().left;
@@ -45,7 +45,7 @@ export default class StepSlider {
       thumb.style.left = `${leftPercents}%`;
       progress.style.width = `${leftPercents}%`;
       for (let s of sliderSteps.children) {
-        s.classList.remove(`slider__step-active`)
+        s.classList.remove(`slider__step-active`);
       }
       sliderSteps.children[value].classList.add(`slider__step-active`);
 
